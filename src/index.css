@@ -1,0 +1,39 @@
+* {
+  font-family: "Arial", sans-serif;
+  font-size: 16pt;
+}
+body {
+  background: pink;
+  margin: 0;
+}
+
+
+h1 {
+  background: rgb(255, 138, 158);
+  color: pink;
+  font-size: 32pt;
+  margin: 0;
+  padding: 64px 0;
+  text-align: center;
+}
+
+
+div {
+  margin: 64px auto;
+  width: 320px;
+}
+input {
+  width: 320px;
+  border-radius: 8px;
+  border: 1px solid rgb(238, 71, 99);
+}
+button {
+  background: rgb(238, 71, 99);
+  border: none;
+  color: pink;
+  display: block;
+  margin: 16px auto;
+  width: 200px;
+  text-decoration: none;
+  border-radius: 8px;
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <h1> 💖 Gerando Senhas </h1>
+  <div>
+    <input type="text" placeholder="Aqui vai a senha" name="senha">
+    <select id="tamanhoSenha">
+      <option value="6">6 caracteres (curta) </option>
+      <option value="10" selected>10 caracteres (padrão) </option>
+      <option value="14">14 caracteres (segura) </option>
+    </select>
+    <button onclick="GerarSenha()"> Gerar Senha </button>
+    <button onclick="VerificarSenha()"> Verificar Senha </button>
+  </div>
+
+  <script>
+    function GerarSenha() {
+      const entradaSenha =  document.querySelector("input")
+      const caracteres = "abcdABCD123@#$&"
+      var senha = ''  
+      for (var contagem = 0; contagem < 10; contagem++) {
+        const aleatorio = Math.floor(Math.random() * caracteres.length)
+        senha += caracteres[aleatorio]
+      }
+      entradaSenha.value = senha
+    }
+
+    function VerificarSenha() {
+      const entradaSenha = document.querySelector("input")
+      const titulo = document.querySelector("h1")
+      const tamanho = entradaSenha.value.length
+      if (tamanho < 4)
+        titulo.innerHTML = "Senha curta"
+      else if (tamanho < 8)
+        titulo.innerHTML = "Senha média"
+      else
+        titulo.innerHTML = "Senha longa"
+      const caracteres = entradaSenha.value.split("")
+      if (caracteres.some(caractere => caractere === '@' || caractere === '#' || caractere === '$' || caractere === '&'))
+        titulo.innerHTML += " e segura"
+      else
+        titulo.innerHTML += " e insegura"
+    }
+  </script>
+
+</body>
+</html>
